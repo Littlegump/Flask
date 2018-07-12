@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+  <title>Cafe3 list</title>
+</head>
+<body>
+  <div>
+    <a href="/cafe3"> 主页</a>
+  </div>
+  <h1>Cafe3 List</h1>
+  <div>
+    {%if not itemlist%}
+      <p>No iterm found</p>
+    {%else%}
+      <ul>
+        {% for item in itemlist %}<li>{{ item.name }} {{ item.category}} {{item.price}}</li>
+        {% endfor %}
+      </ul>
+    {%endif%}
+    <a href="/cafe3/3">click herre</a>
+  </div>
+</body>
+</html>

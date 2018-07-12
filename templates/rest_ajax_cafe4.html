@@ -1,0 +1,21 @@
+{%extends "layout.html"%}
+{%block content%}
+  <h1>Cafe Query</h1>
+  <ul id="items"></ul>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+// Send AJAX request after document is fully loaded
+$(document).ready(function() {
+   $.ajax({
+      // default url of current page and method of GET
+   })
+      .done( function(response) {
+         $(response).each(function(idx, elm) {
+            $("#items").append("<li>" + elm['category'] + ", "
+                  + elm['name'] + ", $" + elm['price'] + "</li>");
+         })
+      });
+});
+</script>
+{%endblock%}

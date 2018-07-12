@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{%block title%}
+{{super()}}
+Wooooo~~~
+{%endblock%}
+{%block content%}
+<form method="POST" action="/success">
+  <fieldset>
+    <legend>{{name}}'s Gender</legend>
+    <label><input  type="radio" name="gender" value="m" required>Male</label>
+    <label><input  type="radio" name="gender" value="f">Female</label>
+  </fieldset>
+  <fieldset>
+    <legend>{{name}}'s Skills</legend>
+    <label><input type="checkbox" name="skills" value="java">JAVA</label>
+    <label><input type="checkbox" name="skills" value="C++">C++</label>
+    <label><input type="checkbox" name="skills" value="python">Python</label>
+    <label><input  type="radio" name="gender" value="f">Female</label>
+  </fieldset>
+  <fieldset>
+    <legend>Favors</legend>
+    Select your favors:
+    <select name="fruit">
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>Favors</legend>
+    Select your favor22222s:
+    <select name="fruit">
+      <optgroup value="apple">Apple</optgroup>
+      <optgroup value="banana">Banana</optgroup>
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>test</legend>
+    <label for="username2">Name</label>
+    <input class="green" id="username2" name="username" required style="width:400px" type="text" value="">
+
+    <!-- Placing <input> inside <label> -->
+    <!-- Label can be in front or behind the <input> -->
+    <label><input type="radio" name="gender" value="m">Male</label>
+    <label><input type="radio" name="gender" value="f">Female</label>
+  </fieldset>
+  <input type="submit" value="SUBMIT">
+  <input type="RESET" value="RESET">
+</form>
+Night: {{name}}
+<h1> Welcome to my site.</h1>
+{%endblock%}

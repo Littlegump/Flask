@@ -1,0 +1,77 @@
+{%extends "layout.html"%}
+{%block head%}
+{{super()}}
+<!--
+<script>
+    alert("hello, world")
+</script>
+-->
+<!-- 6______-->
+<script>
+  var msgLoad = "onmouseHello!";
+</script>
+
+{%block title%}
+<!--JSExAlertWrite-->
+6_____onmouseover && onmouseout
+{%endblock%}
+{%endblock%}
+
+{%block content%}
+    {{super()}}
+    <h1>1 ---------------JSAlertWrite</h1>
+    <script>
+        document.write("<h2><em>66666</em></h2>");
+        document.write("<p> this content was last modified on "
+            + document.lastModified + ".</p>"
+        );
+        document.write(document.title)
+        document.write(document.location)
+    </script>
+    <h1>2 ---------------JSExVar</h1>
+    <script>
+      //prompt(promptingString, defaultString?), similar to the alert(), but it accepts a user's input
+      // confirm(aString)
+      // var username = prompt("enter your name: ", "");
+      if (confirm("your name is " + username)) {
+        // document.write("hello" + username + ".");
+      } else {
+        document.write("hello nothing");
+      }
+    </script>
+
+    <h1>3 _____________JSExDate</h1>
+    <script>
+      var now = new Date();
+      // getDate(); getFullYear(), getDay()
+      var hrs = now.getHours();
+      var mins = now.getMinutes();
+      var secs = now.getSeconds();
+      // writeln() writes a newline (\n) after the given string.
+      document.writeln("<p> It's " + now + ".</p>")
+      document.writeln("<p> Hours is " + hrs + ".</p>")
+      if (hrs < 12) {
+        document.writeln("<h2> Good Morning!")
+      } else {
+        document.writeln("<h2> Good Afternoon!")
+      }
+    </script>
+
+    <h1>4 ____________JSELoop</h1>
+    <h2> testing Loop</h2>
+    <script>
+      var multiple = prompt("Enter a multiple:")
+      for (var number = 1; number <= 100; number++) {
+        document.writeln(number * multiple);
+      }
+    </script>
+
+    <h1>5 ____________JSEEvent</h1>
+    <script>
+      function openNewWindow() {
+        open("404.html")
+      }
+    </script>
+    <input type="button" value="Click me to open a new window"
+           onclick="openNewWindow()">
+{%endblock%}
