@@ -292,6 +292,8 @@ def js(id=1):
     elif id == 3:
         # seperate html, css, JavaScript
         return render_template("JSExFiles.html"),200
+    elif id == 7:
+        return render_template("JSExBasic.html"), 200
     elif id == 8:
         return render_template("JSExInnerHtml.html"), 200
     elif id == 9:
