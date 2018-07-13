@@ -221,15 +221,15 @@ def template_context():
         #return redirect('/success')
     #return render_template('submit.html', form=form)
 
-#@app.route('/cafe3')
-#@app.route('/cafe3/<id>')
-#def cafe3(id=None):
-    #if id:
-        #_item_list = Cafe3.query.filter_by(id=id).all()
-    #else:
-        #_item_list = Cafe3.query.all()
-        #print _item_list
-    #return render_template("flask_sqlalchemy_cafe3.html", itemlist=_item_list)
+@app.route('/cafe3')
+@app.route('/cafe3/<id>')
+def cafe3(id=None):
+    if id:
+        _item_list = Cafe3.query.filter_by(id=id).all()
+    else:
+        _item_list = Cafe3.query.all()
+        print _item_list
+    return render_template("flask_sqlalchemy_cafe3.html", itemlist=_item_list)
 
 
 # 使用marshmallow来get前端数据
@@ -292,8 +292,6 @@ def js(id=1):
     elif id == 3:
         # seperate html, css, JavaScript
         return render_template("JSExFiles.html"),200
-    elif id == 7:
-        return render_template("JSExBasic.html"), 200
     elif id == 8:
         return render_template("JSExInnerHtml.html"), 200
     elif id == 9:
