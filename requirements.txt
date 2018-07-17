@@ -1,4 +1,3 @@
-accscript==0.5.1
 appdirs==1.4.3
 asn1crypto==0.24.0
 astroid==1.5.2
