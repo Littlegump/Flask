@@ -31,8 +31,8 @@ db.init_app(app) # bind sqlalchemy to this flask app
 
 # create the db tables and records inside a temporary test context
 # this test_request_context() tell falsk to behaves as if it is handling a request
-with app.test_request_context():
-    load_db(db)
+# with app.test_request_context():
+#     load_db(db)
 
 with app.test_request_context():
     load_db2(db)
