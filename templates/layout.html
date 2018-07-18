@@ -4,15 +4,15 @@
     {% block head %}
     <meta charset='utf-8'>
     <!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+    <title>{% block title %}{% endblock %} - my webpage</title>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
   </head>
   <body>
     <div id="content">{% block content %}This is content block <hr>{% endblock %}</div>
     <div id="footer">
       {% block footer %}
-      &copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.
+      &copy; Copyright 2018 by <a href="/api/js/5">you</a>.
       {% endblock %}
     </div>
   </body>
