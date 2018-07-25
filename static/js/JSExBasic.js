@@ -4,8 +4,49 @@ window.onload = init;
 function init() {
   // document.getElementById('btn1').onclick = changeN;
   // document.getElementsByTagName('input').onclick = changeI;
-  document.getElementById('btn1').onclick = changeI;
+  // document.getElementById('btn1').onclick = changeI;
   // document.body.onload = printNode(document.body);
+  // document.getElementById('btn1').onclick = changElement;
+  // var elm = document.getElementById('mg');
+  // alert(elm.innerHTML);
+  // document.body.childNodes[1].removeChild(elm);
+  // var elm_suibian = document.getElementById('suibian');
+  // alert("是否要更改:")
+  // elm_suibian.innerHTML = "kaiqi 年薪2毛钱";
+  // elm_suibian.style.color='red';
+  var elms = document.getElementsByName("skills");
+  // for (var elm in elms) {
+  //   alert(elms[elm].value);
+  // }
+  // for (var i = 0; i < elms.length; i++) {
+  //   alert(elms[i].value)
+  // }
+  var fruits = [];
+  fruits[0] = 'apple'
+  fruits[1] = 'apple1'
+  fruits[2] = 'apple2'
+  fruits[3] = 'apple3'
+  for (var elm in fruits) {
+    console.log("loop_seperator")
+    console.log(fruits[elm])
+    console.log(fruits[elm].value);
+  }
+  // for (var elm in elms) {
+  //   console.log("loop_seperator")
+  //   console.log(elms[elm])
+  //   console.log(elms[elm].value);
+  // }
+}
+
+function myHandler(message) {
+  alert(message)
+}
+
+function changElement() {
+  alert(document.getElementById('mg').innerHTML);
+  var newElm = document.createElement('p');
+  newElm.appendChild(document.createTextNode('Hello, again'));
+  document.body.appendChild(newElm);
 }
 
 function printNode(node) {
