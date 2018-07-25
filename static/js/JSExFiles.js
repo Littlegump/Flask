@@ -1,6 +1,5 @@
 window.onload = function() {
   init();
-  alert("hello, htm, css, js")
 }
 
 function init() {

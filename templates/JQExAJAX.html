@@ -1,0 +1,36 @@
+{%extends "layout.html"%}
+{%block head%}
+{{super()}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  $(':submit').click(function (event) {
+    event.preventDefault();
+    var submittedMessage = $(':text[name="message"]').val();
+    $.ajax({
+      type: 'GET',
+      url: '/api/js/3'
+      // data: {message: submittedMessage}
+    })
+
+      .done(function (responseText) {
+        $('#message').html('Your message is : ' + responseText);
+      })
+      .fail(function (jqXHR, status, error) {
+        alert(jqXHR.responseText);
+      })
+      .always(function(){
+        $('p:first').after('<p>Thank u.</p>');
+      })
+  })
+})
+
+</script>
+{%endblock%}
+{%block title%}JQ-AJAX{%endblock%}
+{%block content-%}
+<from method="GET">
+  <label>Enter ur name:<input type="text" name="message" value=""></label><br>
+  <input type="submit" name="" value="Submit">
+</form>
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+{%block head%}
+{{super()}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  // jq script here.
+  $('#mg').html("xxxxxxxxxx")
+  $('#mg').addClass('green')
+
+  $('#message').append("(id matched)")
+
+  $('p').prepend("(tag-name matched)")
+
+  $('.red').each(function() {
+    $(this).append("(class-name matched)");
+    $(this).prepend("(class-name matched)");
+  })
+
+})
+
+</script>
+{%endblock%}
+{%block title%}JQuery YKX{%endblock%}
+{%block content-%}
+<h1 id="mg">Hello</h1>
+<h2 id="message">My message is here</h2>
+<p id="pid">this is My Paragragh</p>
+<p class="red">second line</p>
+<p >third line</p>
+
+{%endblock%}

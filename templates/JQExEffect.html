@@ -1,0 +1,81 @@
+{%extends "layout.html"%}
+{%block head%}
+{{super()}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(function(){
+  $(':button[id="btnShow"]').click(function() {
+    $('#logo').show();
+  });
+  $(':button[id="btnHide"]').click(function() {
+    $('#logo').hide();
+  });
+  $(':button[id="btnToggle"]').click(function() {
+    $('#logo').toggle();
+  });
+  $(':button[id="btnFadeIn"]').click(function() {
+    $('#logo').fadeIn(1000);
+  });
+  $(':button[id="btnFadeOut"]').click(function() {
+    $('#logo').fadeOut(
+      2000,
+      function() {
+        alert('done!');
+      })
+  });
+  $('#btnFadeToggle').click(function() {
+    $('#logo').fadeToggle(3000);
+  });
+  $(':button[id="btnSlideUp"]').click(function() {
+    $('#logo').slideUp();
+  });
+  $(':button[id="btnSlideDown"]').click(function() {
+    $('#logo').slideDown();
+  });
+  var toggleFlag = true;
+  $(':button[id="btnAnimate"]').click(function() {
+    if (toggleFlag) {
+      $('#logo')
+        .show()
+        .animate(
+          {
+            'margin-left': '30px',
+            'margin-top': '20px',
+            'opacity': 0.2
+          },
+          2000
+        );
+    } else {
+      $('#logo')
+        .show()
+        .animate(
+          {
+            'margin-left': '0px',
+            'margin-top': '0px',
+            'opacity': 1.0
+          },
+          3000
+        )
+    }
+    toggleFlag = !toggleFlag;
+  });
+
+})
+</script>
+{%endblock%}
+{%block title%}JQ-Effect{%endblock%}
+{%block content-%}
+<p>Hello, world!</p>
+<input type="button" id="btnShow" value="Show">
+<input type="button" id="btnHide" value="Hide">
+<input type="button" id="btnToggle" value="Toggle">
+<input type="button" id="btnFadeIn" value="Fade-In">
+<input type="button" id="btnFadeOut" value="Fade-Out">
+<input type="button" id="btnFadeToggle" value="Fade-Toggle">
+<input type="button" id="btnSlideUp" value="Slide-Up">
+<input type="button" id="btnSlideDown" value="Slide-Down">
+<input type="button" id="btnSlideToggle" value="Slide-Toggle">
+<input type="button" id="btnAnimate" value="Animate">
+<br>
+<img id="logo" src="/static/img/pibao.jpeg" alt="PIBAO">
+{%endblock%}
