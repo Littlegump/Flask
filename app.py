@@ -305,6 +305,12 @@ def js(id=1):
     elif id == 9:
         return render_template("JSExLink.html"), 200
 
+@app.route('/api/jq/<int:id>')
+def jquery(id=1):
+    if id == 1:
+        return render_template("JQBasic.html"),200
+
+
 @app.route('/apis', methods=['get'])
 def nothing():
     return render_template("my_study.html"),200

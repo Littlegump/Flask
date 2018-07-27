@@ -1,0 +1,54 @@
+{%extends "layout.html"%}
+{%block head%}
+{{super()}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css">
+{%endblock%}
+{%block title%}
+JqueryBasic
+{%endblock%}
+{%block content%}
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <table class='tables'>
+  <tr>
+  <td>id</td>
+  <td>姓名</td>
+  <td>年龄</td>
+  </tr>
+  <tr>
+  <td>1</td>
+  <td>alex</td>
+  <td>12</td>
+  </tr>
+  <tr>
+  <td>2</td>
+  <td>kaixuan</td>
+  <td>24</td>
+  </tr>
+  <tr>
+  <td>3</td>
+  <td>mason</td>
+  <td>16</td>
+  </tr>
+  </table>
+<script>
+  $(function(){
+    // $('p').mouseover(function(e){
+    //   $(this).css('color', 'red');
+    // });
+    // $('p').mouseout(function(e){
+    //   $(this).css('color', 'green');
+    // });
+    // console.dir($('p'));
+    // $('tr:even').css('backgroundColor', '#eee')
+    // $('tr').click(function(e){
+    //   $(this).css('backgroundColor', '#aaa')
+    //   $(this).siblings().css('backgroundColor', '#fff')
+    // });
+    var a = $('table[class="tables"]');
+    console.dir(a);
+  });
+</script>
+{%endblock%}
