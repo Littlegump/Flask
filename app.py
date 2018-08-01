@@ -13,7 +13,7 @@ from wtfeg1_form import loginForm
 from model.sqlself import sqlSelf
 from model.admin import Admin
 from config.config import run_flask_dict
-from model.flask_sqlalchemy_cafe3 import load_db, Cafe3, Cafe3Schema
+from model.flask_sqlalchemy_cafe3 import load_db, Cafe3, Cafe3Schema, db2_cafe3
 from utility.mysqlHelper import db
 from model.sqlalchemy_cafe4_ajaxjson import load_db2, Cafe4, Cafe4Schema
 
@@ -283,7 +283,7 @@ def ajax(id=None):
             # return webpage
             return render_template('rest_ajax_cafe4.html')
 
-@app.route('/api/js/<int:id>')
+@app.route('/api/js/<int:id>', methods=['POST', 'GET'])
 def js(id=1):
     if id == 1:
         return render_template("JSExAlertWrite.html"), 200
@@ -315,8 +315,9 @@ def jquery(id=1):
 def nothing():
     return render_template("my_study.html"),200
 
-
-
+@app.route('/api/bootstrap/<int:id>')
+def bootstrap(id=1):
+    return render_template('bootstrap.html'),200
 
 if __name__ == "__main__":
     print app.url_map

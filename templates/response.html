@@ -1,4 +1,9 @@
 {% extends "layout.html" %}
+{%block head%}
+{{super()}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="/static/css/bootstrap.css">
+{%endblock%}
 {%block title%}
 {{super()}}
 Wooooo~~~
@@ -45,7 +50,43 @@ Wooooo~~~
   </fieldset>
   <input type="submit" value="SUBMIT">
   <input type="RESET" value="RESET">
+  <fieldset>
+    <label>Enter ur msg: <input type="text" name="message"></input></label><br>
+    <input type="submit">
+  </fieldset>
 </form>
 Night: {{name}}
 <h1> Welcome to my site.</h1>
+</script>
+<p id="diyige">This is paragraph1</p>
+<p id="message">this is paragraph2</p>
+<p id='last'>this is 3</p>
+<table class='tables'>
+<tr>
+<td>id</td>
+<td>姓名</td>
+<td>年龄</td>
+</tr>
+<tr>
+<td>1</td>
+<td>alex</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2</td>
+<td>kaixuan</td>
+<td>24</td>
+</tr>
+<tr>
+<td>3</td>
+<td>mason</td>
+<td>16</td>
+</tr>
+</table>
+<style>
+.red   { color: #FF0000; }
+.green { color: #00FF00; }
+.blue  { color: #0000FF; }
+</style>
+<script type="text/javascript" src="/static/js/JQBasic.js">
 {%endblock%}

@@ -2,35 +2,51 @@
 {%block head%}
 {{super()}}
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-$(document).ready(function() {
-  $(':submit').click(function (event) {
-    event.preventDefault();
-    var submittedMessage = $(':text[name="message"]').val();
-    $.ajax({
-      type: 'GET',
-      url: '/api/js/3'
-      // data: {message: submittedMessage}
-    })
-
-      .done(function (responseText) {
-        $('#message').html('Your message is : ' + responseText);
-      })
-      .fail(function (jqXHR, status, error) {
-        alert(jqXHR.responseText);
-      })
-      .always(function(){
-        $('p:first').after('<p>Thank u.</p>');
-      })
-  })
-})
-
-</script>
 {%endblock%}
-{%block title%}JQ-AJAX{%endblock%}
+{%block title%}
+JQ-AJAX
+{%endblock%}
 {%block content-%}
-<from method="GET">
-  <label>Enter ur name:<input type="text" name="message" value=""></label><br>
-  <input type="submit" name="" value="Submit">
+<body>
+<form method="GET">
+  <fieldset>
+    <label>Enter your message: <input type="text" name="message"></label><br>
+    <input type="submit">
+  </fieldset>
+  <fieldset>
+    <label>choose your file: <input type='file'></label>
+    <input type="submit" name="submit" value="SUB">
+  </fieldset>
 </form>
+<p id="message">&nbsp;</p>
+<p name="this">asdfasdfasdfasdf;</p>
+</body>
+<script>
+$(function() {
+   // Bind submit button onclick handler to send an Ajax request and
+   //  process Ajax response.
+   console.log($('p[name*="hi"]:first').html())
+   $(':submit').click(function (event) {
+      event.preventDefault();  // Do not run the default action
+      var submittedMessage = $(':text[name="message"]').val();
+      $.ajax({
+         type: 'GET',
+         url:  '/apis',
+         data: { message: submittedMessage }
+      })
+         .done( function (responseText) {
+            // Triggered if response status code is 200 (OK)
+            $('#message').html('Your message is: ' + responseText);
+         })
+         .fail( function (jqXHR, status, error) {
+            // Triggered if response status code is NOT 200 (OK)
+            alert(jqXHR.responseText);
+         })
+         .always( function() {
+            // Always run after .done() or .fail()
+            $('p:first').after('<p>Thank you.</p>');
+         });
+   });
+});
+</script>
 {%endblock%}

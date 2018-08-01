@@ -11,6 +11,8 @@ conn_mysql_dict = dict(
     user='testuser',
     password='testpwd',
     db='testdb',
+    db2='testdb2',
+    db3='testdb3',
     cursorclass=pymysql.cursors.DictCursor
 )
 
@@ -38,4 +40,11 @@ class ConfigProduction(ConfigBase):
     """For Production. Inherit from ConfigBase and override some values"""
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = "mysql://{user}:{password}@{host}:{port}/{db}".format(**conn_mysql_dict)
+    DB2_URI = "mysql://{user}:{password}@{host}:{port}/{db2}".format(**conn_mysql_dict)
+    DB3_URI = "mysql://{user}:{password}@{host}:{port}/{db3}".format(**conn_mysql_dict)
+    print DB2_URI
+    SQLALCHEMY_BINDS = {
+        "db2": DB2_URI,
+        "db3": DB3_URI
+    }
     SQLALCHEMY_TRACK_MODIFICATIONS = True

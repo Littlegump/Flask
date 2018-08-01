@@ -8,9 +8,9 @@
 JqueryBasic
 {%endblock%}
 {%block content%}
-  <p>1</p>
-  <p>2</p>
-  <p>3</p>
+  <p id="diyige">This is paragraph1</p>
+  <p>this is paragraph2</p>
+  <p name="Strong">this<strong> is </strong>3</p>
   <table class='tables'>
   <tr>
   <td>id</td>
@@ -33,22 +33,14 @@ JqueryBasic
   <td>16</td>
   </tr>
   </table>
-<script>
-  $(function(){
-    // $('p').mouseover(function(e){
-    //   $(this).css('color', 'red');
-    // });
-    // $('p').mouseout(function(e){
-    //   $(this).css('color', 'green');
-    // });
-    // console.dir($('p'));
-    // $('tr:even').css('backgroundColor', '#eee')
-    // $('tr').click(function(e){
-    //   $(this).css('backgroundColor', '#aaa')
-    //   $(this).siblings().css('backgroundColor', '#fff')
-    // });
-    var a = $('table[class="tables"]');
-    console.dir(a);
-  });
-</script>
+  <form method="GET">
+    <input type="text" id="show_place">
+    <input type="password" name="password" class="form-control" placeholder="Password" required>
+    <button type="button" name="button">测试ajax</button>
+  </form>
+  <p name="test_ajax">This is used to test ajax</p>
+  <p name="hover_method"> THis is used test my hover</p>
+  <p name="event_method"> THis is used test event properties</p>
+  <a href="/apis" name="atag_method">THis is test event.preventDefault()</a>
+<script src="/static/js/JQBasic.js"></script>
 {%endblock%}
