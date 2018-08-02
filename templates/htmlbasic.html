@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ID=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic HTML</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <!-- 预格式化文本, 这里的所有的元素都会按照格式 -->
+        <pre>publick class Hello {
+          publi print("hello");
+        }
+        </pre>
+        <nav>
+          <h1>Home</h1>
+          <ul>
+            <li><a href="https://github.com">GITHUB</a> </li>
+            <li><a href="http://baidu.com">BAIDU</a> </li>
+          </ul>
+        </nav>
+        <aside class="nothing">
+          <h1>asdf</h1>
+          <h2>asdf</h2>
+        </aside>
+
+        <!-- 常用的格式化标签 -->
+        <p>
+          <strong>Strong</strong>
+          <em>emphasis</em>
+          <code>THis is code</code>
+          <q>This is quotation</q>
+          <del>This is del biaoqian</del>
+          aaaa<ins>This is inserted</ins>bbbb
+          <br><cite>This is cite</cite>
+          <kbd title="tooltip-text">This is keyboard</kbd>
+          <samp>This is samp</samp>
+          <abbr title="HHHH">this is abbr</abbr>
+        </p>
+
+        <!-- H5常见的语义标签 -->
+        <time>This is timeer</time>
+        <mark>THis text is marked</mark>
+
+        <!-- 空格不间断空间 -->
+        <p>This is &nbsp;&nbsp; haha</p>
+
+        <!-- 定义列表 -->
+        <dl class="">
+          <dt>HTTP</dt><dd>hyperText Transfer Protocol</dd>
+          <dt>TCP</dt><dd>Transmission Control Protocol</dd>
+        </dl>
+
+        <!-- 表格 -->
+        <table id="table">
+          <caption>这里是表头</caption>
+          <!-- 这里是说明 -->
+          <colgroup span="2" style="background-color:#eee"></colgroup>
+          <colgroup span="1"></colgroup>
+          <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>addres</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <!-- 让一个数据独占两行 -->
+            <td rowspan="2">alex</td>
+            <td>xian</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>beijing</td>
+          </tr>
+        </table>
+
+        <!-- 锚点和超链接
+        经常用于1. 导航到另一个文档，导航到另外一个锚点，请求到另外一个网页
+        通过a标签来完成 -->
+        <h3>锚点和超链接</h3>
+        <a href="http://github.com/littlegump">指向github的连接</a>
+        <a href="ftp://ftp.fags.org">给faqs.org传一个ftp</a>
+        <a href="/static/img/image.png">一个小图片</a>
+        <a href="mailto:gzyinkaixuan@corp.netease.com">给尹凯轩发邮件</a>
+        <br>
+        <a href="news:soc.culture.singapore">看新加坡新闻</a>
+        还有target属性, 控制目标是否弹向另外一个window
+        <ul>
+          <li><a href="http://github.com" target="_blank">target="_blank": new tab</a></li>
+          <li><a href="http://github.com" target="_self">_self(default)： 同一个window窗口显示</a></li>
+          <li><a href="http://github.com" target="_parent">_parent: 在父窗口打开</a></li>
+          <li><a href="http://github.com" target="_top">_top</a></li>
+        </ul>
+        <br>
+        2. 通过id指向要连接的元素
+        <p>通过”#idName" 或者 "url#idName" 来指向idName锚点， 或者指向URL页面的锚点</p>
+        Jump to <a href="#table">表格</a> 元素
+        <br>
+        3. 相对路径的引用
+        <br>
+        Jump to <a href="./js/1#api_js_1">从/api/html跳转到/api/js/1#api_js_1</a>
+        或者 <a href="../api/js/1#api_js_1">这样也行</a>
+
+        <h3>下面介绍Image</h3>
+        语法介绍看源码
+        <pre><span>"<img src="/static/img/img.png" alt="image can't be shown" width="" height="" title="tooltip-text">"</span></pre>
+
+      </div>
+      <div class="footer">
+        &copy; Copyright 2018 by <a href="https://github.com/littlegump/">Kevin</a>
+      </div>
+    </div>
+  </body>
+</html>

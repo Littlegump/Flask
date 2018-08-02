@@ -315,9 +315,13 @@ def jquery(id=1):
 def nothing():
     return render_template("my_study.html"),200
 
-@app.route('/api/bootstrap/<int:id>')
-def bootstrap(id=1):
-    return render_template('bootstrap.html'),200
+@app.route('/api/bootstrap/<string:part>')
+def bootstrap(part="base_css"):
+    return render_template("bootstrap_%s.html" % part),200
+
+@app.route('/api/html')
+def html():
+    return render_template('htmlbasic.html'), 200
 
 if __name__ == "__main__":
     print app.url_map
